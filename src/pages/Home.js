@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import Search from '../Components/search';
+import Categories from '../Components/Categories';
 
 class Home extends Component {
   render() {
     return (
-      <Search />
+      <div>
+        <Categories />
+        <Search />
+      </div>
     );
   }
 }
