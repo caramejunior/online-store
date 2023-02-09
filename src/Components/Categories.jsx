@@ -19,6 +19,7 @@ class Categories extends Component {
 
   render() {
     const { categories } = this.state;
+
     return (
       <div>
         {
