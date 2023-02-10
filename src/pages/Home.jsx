@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import Search from '../Components/search';
+import Header from '../Components/Header';
 import Categories from '../Components/Categories';
 
 class Home extends Component {
   render() {
     return (
       <div>
+        <Header />
         <Categories />
-        <Search />
       </div>
     );
   }

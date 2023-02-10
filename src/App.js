@@ -1,18 +1,13 @@
-import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import React from 'react';
 import './App.css';
-import Home from './pages/Home';
-import ShoppingCart from './pages/Shopping-cart';
+import Routes from './Components/Routes';
 
-class App extends Component {
-  render() {
-    return (
-      <Switch>
-        <Route exact path="/" component={ Home } />
-        <Route path="/Shopping-Cart" component={ ShoppingCart } />
-      </Switch>
-    );
-  }
+function App() {
+  return (
+    <div className="App">
+      <Routes />
+    </div>
+  );
 }
 
 export default App;
