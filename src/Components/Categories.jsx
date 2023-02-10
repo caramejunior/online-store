@@ -22,10 +22,11 @@ class Categories extends Component {
 
     return (
       <div>
+        <h2>Categorias</h2>
         {
-          categories.map((categorie) => (
-            <button type="submit" key={ categorie.id } data-testid="category">
-              { categorie.name }
+          categories.map((category) => (
+            <button type="submit" key={ category.id } data-testid="category">
+              { category.name }
             </button>
           ))
         }
