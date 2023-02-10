@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { getCategories } from '../services/api';
 
-class Categories extends Component {
+export default class Categories extends Component {
   state = {
     categories: [],
   };
@@ -15,17 +15,21 @@ class Categories extends Component {
     this.setState({
       categories,
     });
+    console.log(categories);
   };
 
   render() {
     const { categories } = this.state;
-
     return (
-      <div>
+      <div className="categiries">
         <h2>Categorias</h2>
         {
           categories.map((category) => (
-            <button type="submit" key={ category.id } data-testid="category">
+            <button
+              data-testid="category"
+              type="submit"
+              key={ category.name }
+            >
               { category.name }
             </button>
           ))
@@ -34,5 +38,3 @@ class Categories extends Component {
     );
   }
 }
-
-export default Categories;
