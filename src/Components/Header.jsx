@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import Logo from '../images/logo.png';
 import Vector from '../images/Vector.png';
 
 export default class Header extends Component {
   render() {
+    const { handleChange, handleClick } = this.props;
+
     return (
       <header>
         <div className="search">
@@ -16,12 +19,16 @@ export default class Header extends Component {
             <br />
             <input
               type="text"
-              name="Product"
+              name="query"
               id="Product"
+              onChange={ handleChange }
+              data-testid="query-input"
             />
           </label>
           <button
             type="submit"
+            onClick={ handleClick }
+            data-testid="query-button"
           >
             Pesquisar
 
@@ -46,3 +53,8 @@ export default class Header extends Component {
     );
   }
 }
+
+Header.propTypes = {
+  handleChange: PropTypes.func.isRequired,
+  handleClick: PropTypes.func.isRequired,
+};
