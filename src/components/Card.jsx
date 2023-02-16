@@ -14,7 +14,11 @@ export default class Card extends Component {
           <small>{ title }</small>
           <p>{ `R$ ${price}` }</p>
         </div>
-        <Link to={ `/product/${id}` } className="linkProduto">
+        <Link
+          to={ `/ProductDetail/${id}` }
+          className="linkProduto"
+          data-testid="product-detail-link"
+        >
           Saiba mais
         </Link>
       </div>
