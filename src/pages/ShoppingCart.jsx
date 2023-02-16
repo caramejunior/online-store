@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-class ShoppingCart extends Component {
+export default class ShoppingCart extends Component {
   render() {
     return (
-      <Route>
-        <div>
-          <h2 data-testid="shopping-cart-empty-message">Seu carrinho está vazio</h2>
-        </div>
-      </Route>
+      <div>
+        <Link to="/">Voltar</Link>
+        <h1 data-testid="shopping-cart-empty-message">Seu carrinho está vazio</h1>
+      </div>
     );
   }
 }
-export default ShoppingCart;
