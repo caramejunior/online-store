@@ -1,3 +1,4 @@
+/* eslint-disable sonarjs/no-duplicate-string */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
@@ -19,7 +20,7 @@ export default class CardCartProduct extends Component {
           padding: '10px',
           margin: '10px',
           // eslint-disable-next-line sonarjs/no-duplicate-string
-          boxShadow: '0px 0px 10px 0px rgba(0, 0, 0, 0.2)',
+          //   boxShadow: '0px 0px 10px 0px rgba(0, 0, 0, 0.2)',
           backgroundColor: 'white',
           cursor: 'pointer',
           color: 'black',
@@ -30,7 +31,6 @@ export default class CardCartProduct extends Component {
           lineHeight: '20px',
           transition: 'all 0.3s ease 0s',
           ':hover': {
-            boxShadow: '0px 0px 10px 0px rgba(0, 0, 0, 0.2)',
             backgroundColor: 'white',
             color: 'black',
           },
@@ -90,5 +90,4 @@ CardCartProduct.propTypes = {
     thumbnail: PropTypes.string.isRequired,
     quantity: PropTypes.string.isRequired,
   }).isRequired,
-  // updateProdutCart: PropTypes.func.isRequired,
 };
