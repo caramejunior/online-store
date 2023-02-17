@@ -121,6 +121,7 @@ export default class Home extends Component {
                 title={ prod.title }
                 thumbnail={ prod.thumbnail }
                 id={ prod.id }
+                addToCart={ this.addToCart }
               />
             ))
           }

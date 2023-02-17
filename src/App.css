@@ -93,7 +93,18 @@ header {
   width: 80%;
 }
 
+.linkAddCarrinho {
+  border: 1px solid rgb(0, 17, 255);
+  border-radius: 10px;
+  height: 20px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  width: 80%;
+  cursor: pointer;
+}
+
 .home {
   color: white;
   font-size: 3rem;
 }
+
