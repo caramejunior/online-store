@@ -35,6 +35,28 @@ export default class Home extends Component {
     console.log(queryList);
   };
 
+  addToCart = (product) => {
+    const cartLocalStorage = JSON.parse(localStorage.getItem('cart'));
+    if (cartLocalStorage) {
+      const productInCart = cartLocalStorage.find((item) => item.id === product.id);
+      if (productInCart) {
+        const newCart = cartLocalStorage.map((item) => {
+          if (item.id === product.id) {
+            return {
+              ...item,
+              quantity: item.quantity + 1,
+            };
+          }
+          return item;
+        });
+        localStorage.setItem('cart', JSON.stringify(newCart));
+      } else {
+        const newCart = [...cartLocalStorage, { ...product, quantity: 1 }];
+        localStorage.setItem('cart', JSON.stringify(newCart));
+      }
+    }
+  };
+
   render() {
     const { category, query, queryList } = this.state;
     return (
