@@ -19,11 +19,13 @@ export default class Home extends Component {
   categories = async () => {
     const category = await getCategories();
     this.setState({ category });
+    // console.log(category);
   };
 
   getQuery = ({ target }) => {
     const { name, value } = target;
     this.setState({ [name]: value });
+    // console.log(name, value);
   };
 
   getProductsList = async (categoria, termo) => {
@@ -80,7 +82,7 @@ export default class Home extends Component {
                 type="submit"
                 key={ cat.id }
               >
-                { cat.name }
+                {cat.name}
               </button>
             ))
           }

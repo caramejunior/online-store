@@ -46,11 +46,9 @@ export default class ShoppingCart extends Component {
           alignItems: 'center',
         } }
       >
+        <h2 data-testid="shopping-cart-empty-message">Seu carrinho está vazio</h2>
         <CardCartProduct
           product={ {
-            thumbnail: '',
-            price: 20,
-            id: '',
             title: 'Pequeno Principe, O',
             quantity: '1',
           } }
