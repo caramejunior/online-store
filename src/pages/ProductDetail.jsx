@@ -21,6 +21,31 @@ class ProductDetail extends Component {
     this.setState({ produto: product });
   };
 
+  addToCart = (product) => {
+    const cartLocalStorage = JSON.parse(localStorage.getItem('cart'));
+    if (cartLocalStorage) {
+      const productInCart = cartLocalStorage.find((item) => item.id === product.id);
+      if (productInCart) {
+        const newCart = cartLocalStorage.map((item) => {
+          if (item.id === product.id) {
+            return {
+              ...item,
+              quantity: item.quantity + 1,
+            };
+          }
+          return item;
+        });
+        localStorage.setItem('cart', JSON.stringify(newCart));
+      } else {
+        const newCart = [...cartLocalStorage, { ...product, quantity: 1 }];
+        localStorage.setItem('cart', JSON.stringify(newCart));
+      }
+    } else {
+      const newCart = [{ ...product, quantity: 1 }];
+      localStorage.setItem('cart', JSON.stringify(newCart));
+    }
+  };
+
   render() {
     const { produto } = this.state;
     const { title, thumbnail, price } = produto;
@@ -38,10 +63,21 @@ class ProductDetail extends Component {
           <p data-testid="product-detail-price">{ price }</p>
         </div>
         <button
-          type="button"
-          data-testid="shopping-cart-button"
+          onClick={ () => {
+            this.addToCart({
+              id,
+              title,
+              price,
+              thumbnail,
+            });
+          } }
+          className="linkAddCarrinho"
+          style={ {
+            width: '20%',
+          } }
+          data-testid="product-add-to-cart"
         >
-          Adicionar ao Carrinho
+          Adicionar ao carrinho
         </button>
       </div>
     );

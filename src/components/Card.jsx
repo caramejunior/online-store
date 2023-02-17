@@ -11,7 +11,7 @@ export default class Card extends Component {
           <img src={ thumbnail } alt={ title } />
         </div>
         <div className="descricao">
-          <small>{ title }</small>
+          <small data-testid="shopping-cart-product-name">{ title }</small>
           <p>{ `R$ ${price}` }</p>
         </div>
         <Link

@@ -19,13 +19,11 @@ export default class Home extends Component {
   categories = async () => {
     const category = await getCategories();
     this.setState({ category });
-    // console.log(category);
   };
 
   getQuery = ({ target }) => {
     const { name, value } = target;
     this.setState({ [name]: value });
-    // console.log(name, value);
   };
 
   getProductsList = async (categoria, termo) => {
@@ -54,6 +52,9 @@ export default class Home extends Component {
         const newCart = [...cartLocalStorage, { ...product, quantity: 1 }];
         localStorage.setItem('cart', JSON.stringify(newCart));
       }
+    } else {
+      const newCart = [{ ...product, quantity: 1 }];
+      localStorage.setItem('cart', JSON.stringify(newCart));
     }
   };
 
